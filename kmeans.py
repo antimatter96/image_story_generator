@@ -47,7 +47,7 @@ dictionary={cluster_label: np.where(kmeans.labels_ == cluster_label)[0] for clus
 dx=[]
 for cluster_label in range(cluster):
     for item in dictionary[cluster_label]:
-        if X[item]==centroids[cluster_label]:
+        if np.array_equal(X[item],centroids[cluster_label]):
             dx.append(item)
             break
 dx.sort()
